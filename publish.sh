@@ -27,3 +27,4 @@ function jekyll() {
 jekyll jekyll build
 git add --all
 git commit -m "Publish update"
+mv _site docs
