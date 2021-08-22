@@ -1,4 +1,5 @@
-_site
+# Workaround github
+#_site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
