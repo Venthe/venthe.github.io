@@ -1,7 +1,8 @@
 ---
 title: 'Thousandth Line of Code'
 subtitle: 'Write right things'
-description: ''
+description: >-
+    This article delves into the balance developers must strike between technical skill and business needs, emphasizing the importance of code readability, team collaboration, and focusing on solving real-world problems over technical complexities. It encourages developers to prioritize domain understanding and adaptability, delivering scalable, maintainable software that aligns with business goals. By valuing meaningful solutions and trusting product priorities, developers can create impactful code without falling into the trap of premature optimization. Perfect for those in software development looking to refine their approach toward practical, business-aligned coding.
 pubDate: '2020-12-01'
 heroImage: '/blog/thousandth-line-of-code-mb16ux/banner.webp'
 heroImageAttribution:
@@ -11,15 +12,15 @@ heroImageAttribution:
   origin: "Pexels"
   originUrl: "https://www.pexels.com/"
 ---
-_"Task has been set, it needs to be carried out. At the end of the day, you are an expert"_ as the once-popular [sketch](https://www.youtube.com/watch?v=BKorP55Aqvg) told us. So you jump right into the fray, to the stuff that matters. Line after line your code takes shape. `SQL` statements populate schema that you've just created, and the threads are ready to be spawned; **your code** - _a masterpiece contained within a thousand lines_.
+_"Task has been set, it needs to be carried out. At the end of the day, you are an expert"_ as the once-popular [sketch](https://www.youtube.com/watch?v=BKorP55Aqvg) told us. So you jump right into the fray, to the stuff that matters. Line after line, your code takes shape. `SQL` statements populate the schema that you've just created, and the threads are ready to be spawned; **your code** --- _a masterpiece contained within a thousand lines_.
 
-Ask yourself a question - is anything that you have written in those thousand lines actually brings value? Let me rephrase what I've just said - what was the goal of the feature that you have set out to do? Was it _"(...) clever queries with SQL (...)"_ or maybe _"(...) efficient utilization of CPU (...)"_? Or maybe something along the lines of -_"as a salesman, I want to refresh view on demand, to be able to show current offer to the customer."_
+Ask yourself a question - does anything you have written in those thousand lines actually bring value? Let me rephrase what I've just said - what is the goal of the feature you set out to create?? Was it _"(...) clever queries with SQL (...)"_ or maybe _"(...) efficient utilization of CPU (...)"_? Or maybe something like, _"as a salesman, I want to refresh the view on demand, to be able to show current offer to the customer."_
 
-Simplistic user story, yet so powerful. There is no mention of threads, not a word about databases, not even a vague hint about performance. And _why_ is actually quite obvious - because _it does not matter_. Not at this point, maybe even never.
+A simple user story, yet powerful. There is no mention of threads, not a word about databases, not even a vague hint about performance. And the reason _why_ is actually quite obvious - because _it does not matter_. Not at this point, perhaps never.
 
 ## Disclaimer
 
-I am writing from a position of a developer involved with business-heavy applications, so don't expect this to apply to embedded code! What I've written here will not necessarily apply to libraries or frameworks too. Moreover, everything presented here is a matter of tradeoff and should be treated as such. As a consequence, you will find this interesting specifically if you work with [E-type program](https://en.wikipedia.org/wiki/Lehman%27s_laws_of_software_evolution). I firmly believe that software is here to solve real-world problems, and so should we.
+I am writing from a position of developer involved with business-heavy applications, so don't expect this to apply to embedded code! What I've written here will not necessarily apply to libraries or frameworks as well. Moreover, everything presented here is a matter of trade-off and should be treated as such. As a consequence, you will find this interesting specifically if you work with [E-type program](https://en.wikipedia.org/wiki/Lehman%27s_laws_of_software_evolution). I firmly believe that software should address real-world problems, and so should we.
 
 ---
 
@@ -29,13 +30,13 @@ I am writing from a position of a developer involved with business-heavy applica
 > 
 > - [Eric Evans](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215), Domain-Driven Design: Tackling Complexity in the Heart of Software
 
-We as developers value code that's efficient, clever - this is after all what we are supposed to do, this is what 10x rock ⭐star developers _honed_ their skills for!
+We as developers value code that's efficient, clever - this is after all what we are supposed to do, this is what 10x rock⭐star developers _honed_ their skills for!
 
 **Except it is not.**
 
 Our job is _not_ to write code. Our job first and foremost is to use our knowledge as programmers to provide a solution to a business problem; not to brag how unreadable/perfect our one-liner is. _Your_ job is to solve problems.
 
-What we ought to do is to place the "domain problem" at the pedestal, as _the_ problem to be solved. Of course solution in itself cannot exist in a vacuum, yes - it requires dependencies: persistence, some kind of user interface and so on [\*](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/). But still, the very core of our problem is business oriented, we _should not_ prioritize dependencies. In fact, a **solution** should work independently from dependencies [\*](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/), should be testable and verifiable irregardless of _how_ those dependencies are coded. And if that means not using some clever optimization hack or sacrificing some performance along the way... Then said optimization, so lauded by hackathon winners, never mattered after all.
+What we ought to do is to place the "domain problem" at the pedestal, as _the_ problem to be solved. Of course solution in itself cannot exist in a vacuum, yes - it requires dependencies: persistence, some kind of user interface and so on [\*](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/). But still, the very core of our problem is business oriented, we _should not_ prioritize dependencies. In fact, a **solution** should work independently from dependencies [\*](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/), should be testable and verifiable regardless of _how_ those dependencies are coded. And if that means not using some clever optimization hack or sacrificing some performance along the way... Then said optimization, so lauded by hackathon winners, never mattered after all.
 
 ---
 
@@ -45,7 +46,7 @@ What we ought to do is to place the "domain problem" at the pedestal, as _the_ p
 
 Comic by [XKCD](https://xkcd.com/1833/)
 
-Coding something larger than "you" - as in something you can write and maintain yourself, for yourself - is about anything but the code. it should be written in a way that is and will be understood by the team, arguably to the point that non-technical person can read it just as well as you do. Because the problem is, as noted time and time again, that you read code more often than you write it. As a matter of fact, _"ratio of time spent reading versus writing is well over 10 to 1."_ [\*](https://www.oreilly.com/library/view/clean-code-a/9780136083238/). So hand in hand with the previous point, if you have to sacrifice _some_ performance to align code with domain knowledge, to make it readable, _malleable_, go for it! Because code can always be optimized when needed; and the input that you can get from aligning the code to domain expert's knowledge is invaluable. And the time not wasted by your peers on digging through piles of cleverness is a time and money saved.
+Coding a system larger than what you can maintain alone is more than just about writing code. It should be written in a way that is and will be understood by the team, arguably to the point that non-technical person can read it just as well as you do. Because the problem is, as noted time and time again, that you read code more often than you write it. As a matter of fact, _"ratio of time spent reading versus writing is well over 10 to 1."_ [\*](https://www.oreilly.com/library/view/clean-code-a/9780136083238/). So hand in hand with the previous point, if you have to sacrifice _some_ performance to align code with domain knowledge, to make it readable, _malleable_, go for it! Because code can always be optimized when needed; and the input that you can get from aligning the code to domain expert's knowledge is invaluable. And the time not wasted by your peers on digging through piles of cleverness is a time and money saved.
 
 In the next couple paragraphs, I'll illustrate certain viewpoints that I wish you to go through.
 
@@ -53,7 +54,7 @@ In the next couple paragraphs, I'll illustrate certain viewpoints that I wish yo
 
 We tend to work on a smaller scale - us, developers. Connect with this, send event here, consume that. We sadly avoid immersing ourselves with the domain and the problems that are actually relevant to what we produce. We do not try to understand product's value; we do not walk a mile in Product Owner's shoes. We write solutions to technical problems ignoring their real value. But the programming is a balancing act; and when we set our mind to do the work, it's easy to forget that we often focus on the detail where detail is not as important.
 
-Consider this as a matter of trust. Typically, we work in a structured environment. Product owner [\*](https://www.scrumguides.org/scrum-guide.html) will tell us what he or she expects. We need to trust that what we are being told that has to be done will make the most of our time. And sometimes, we find out for example that current architecture is unfit to the solution. Don't be afraid to settle differences by talking. You don't have to understand the big picture, but you have to trust that someone does - and if you present your concerns, then things that you see as problematic - in example, architecture - Product Owner will prioritize technical work as well, because it is his job to decide about priority of a task, but it is up to you to help him understand how valuable (Or costly!) such change is. If you do not, then you risk that PO will make the decisions _without_ your input.
+Consider this as a matter of trust. Typically, we work in a structured environment. Product owner [\*](https://www.scrumguides.org/scrum-guide.html) will tell us what he or she expects. We need to trust that what we are being told that has to be done will make the most of our time. And sometimes, we find out for example that current architecture is unfit to the solution. Don't be afraid to settle differences by talking. You don't have to understand the big picture, but you have to trust that someone does - and if you present your concerns, then things that you see as problematic - in example, architecture - Product Owner can prioritize technical work when needed, because it is his job to decide about priority of a task, but it is up to you to help him understand how valuable (Or costly!) such change is. If you do not, then you risk that PO will make the decisions _without_ your input.
 
 ### Solving the problem that never was
 
