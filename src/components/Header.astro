@@ -1,6 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, GITHUB_URL, LINKEDIN_URL } from '../consts';
 ---
 
 <header>
@@ -11,7 +11,7 @@ import { SITE_TITLE } from '../consts';
 			<HeaderLink href="/blog">Blog</HeaderLink>
 		</div>
 		<div class="social-links">
-			<a href="https://github.com/venthe" target="_blank">
+			<a href={GITHUB_URL} target="_blank">
 				<span class="sr-only">Go to Jacek Lipiec's github repo</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -20,7 +20,7 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 				>
 			</a>
-			<a href="https://www.linkedin.com/in/jaceklipiec/" target="_blank">
+			<a href={LINKEDIN_URL} target="_blank">
 				<span class="sr-only">Go to Jacek Lipiec's linkedin</span>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 43 43" aria-hidden="true" width="32" height="32">
 					<path
