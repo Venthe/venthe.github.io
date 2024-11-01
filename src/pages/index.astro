@@ -50,6 +50,19 @@ import { SITE_TITLE, SITE_DESCRIPTION, LINKEDIN_URL, EMAIL } from "../consts";
 				color: green;
 				font-size: 1.2rem;
 			}
+
+			@media (max-width: 720px) {
+				.image-container  {
+					margin-left: 0.5rem;
+					margin-right: 0.5rem;
+				}
+
+				.circle-image {
+					--circle-image-size: 6rem;
+					width: var(--circle-image-size);
+					height: var(--circle-image-size);
+				}
+			}
 		</style>
 	</head>
 	<body>
