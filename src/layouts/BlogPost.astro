@@ -55,6 +55,18 @@ const { title, subtitle, description, pubDate, updatedDate, heroImage, heroImage
 				text-align: center;
 				display: block;
 			}
+			@media (max-width: 720px) {
+				main {
+					width: 100%;
+					padding: 0.5em;
+					box-sizing: border-box;
+				}
+				.prose {
+					max-width: calc(100% - 0.2em);
+					box-sizing: border-box;
+					padding: 0;
+				}
+			}
 		</style>
 	</head>
 
