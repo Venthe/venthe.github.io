@@ -1,9 +1,14 @@
 ---
+import Social from "./Social.astro";
+
 const today = new Date();
 ---
 
 <footer>
 	&copy; {today.getFullYear()} Jacek Lipiec. All rights reserved.
+	<div class="social-links">
+		<Social></Social>
+	</div>
 </footer>
 <style>
 	footer {
@@ -11,5 +16,13 @@ const today = new Date();
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
+	}
+	.social-links {
+		display: none;
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: block;
+		}
 	}
 </style>
